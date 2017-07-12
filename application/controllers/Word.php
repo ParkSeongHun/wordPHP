@@ -8,5 +8,13 @@ class Word extends CI_Controller {
     ->set_content_type('application/json')
     ->set_output(json_encode(array('result_body' => $data)));
   }
+  function test(){
+    $this->load->database();
+    $this->load->model('Word_model');
+    $data = $this -> Word_model-> gets();
+    $this->output
+    ->set_content_type('application/json')
+    ->set_output(json_encode(array('result_body' => $data)));
+  }
 }
 ?>
